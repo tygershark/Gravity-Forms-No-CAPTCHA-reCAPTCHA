@@ -120,6 +120,15 @@ class GFNoCaptchaReCaptcha_Admin {
 	public function create_settings_menu_item() {
 
 		add_options_page(
+    /**
+     * Registers settings page in "Settings" sidebar menu
+     *
+     * @since   1.0.0
+     * @access  public
+     */
+    public function create_settings_menu_item() {
+
+        add_options_page(
             'No CAPTCHA reCAPTCHA Settings',
             'No CAPTCHA reCAPTCHA',
             'manage_options',
