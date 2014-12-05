@@ -22,7 +22,7 @@
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
-	die;
+    die;
 }
 
 /**
@@ -30,8 +30,8 @@ if ( ! defined( 'WPINC' ) ) {
  * This action is documented in includes/class-gf-no-captcha-recaptcha-deactivator.php
  */
 function deactivate_GFNoCaptchaReCaptcha() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-gf-no-captcha-recaptcha-deactivator.php';
-	GFNoCaptchaReCaptcha_Deactivator::deactivate();
+    require_once plugin_dir_path( __FILE__ ) . 'includes/class-gf-no-captcha-recaptcha-deactivator.php';
+    GFNoCaptchaReCaptcha_Deactivator::deactivate();
 }
 
 register_deactivation_hook( __FILE__, 'deactivate_GFNoCaptchaReCaptcha' );
@@ -53,8 +53,8 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-gf-no-captcha-recaptcha.ph
  */
 function run_GFNoCaptchaReCaptcha() {
 
-	$plugin = new GFNoCaptchaReCaptcha();
-	$plugin->run();
+    $plugin = new GFNoCaptchaReCaptcha();
+    $plugin->run();
 
 }
 run_GFNoCaptchaReCaptcha();

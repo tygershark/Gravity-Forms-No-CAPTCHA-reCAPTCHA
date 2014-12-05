@@ -22,104 +22,101 @@
  */
 class GFNoCaptchaReCaptcha_Admin {
 
-	/**
-	 * The ID of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $GFNoCaptchaReCaptcha    The ID of this plugin.
-	 */
-	private $GFNoCaptchaReCaptcha;
+    /**
+     * The ID of this plugin.
+     *
+     * @since    1.0.0
+     * @access   private
+     * @var      string    $GFNoCaptchaReCaptcha    The ID of this plugin.
+     */
+    private $GFNoCaptchaReCaptcha;
 
-	/**
-	 * The version of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $version    The current version of this plugin.
-	 */
-	private $version;
+    /**
+     * The version of this plugin.
+     *
+     * @since    1.0.0
+     * @access   private
+     * @var      string    $version    The current version of this plugin.
+     */
+    private $version;
 
-	/**
-	 * Name for private/public key options
-	 *
-	 * @since   1.0.0
-	 * @access  private
-	 * @var     string     $options_name    Name for options (ie: Private/public keys)
-	 */
-	private $options_name;
+    /**
+     * Name for private/public key options
+     *
+     * @since   1.0.0
+     * @access  private
+     * @var     string     $options_name    Name for options (ie: Private/public keys)
+     */
+    private $options_name;
 
-	/**
-	 * Holds applicable setting option values (ie: private/public keys from settings page)
-	 *
-	 * @since   1.0.0
-	 * @access  private
-	 * @var     string     $options_values    Applicable setting option values (ie: private/public keys from settings page)
-	 */
-	private $options_values;
+    /**
+     * Holds applicable setting option values (ie: private/public keys from settings page)
+     *
+     * @since   1.0.0
+     * @access  private
+     * @var     string     $options_values    Applicable setting option values (ie: private/public keys from settings page)
+     */
+    private $options_values;
 
-	/**
-	 * Initialize the class and set its properties.
-	 *
-	 * @since    1.0.0
-	 *
-	 * @param    string    $GFNoCaptchaReCaptcha    The name of this plugin.
-	 * @param    string    $version                 The version of this plugin.
-	 * @param    string    $options_name            Name for options (ie: Private/public keys)
-	 */
-	public function __construct( $GFNoCaptchaReCaptcha, $version, $options_name ) {
+    /**
+     * Initialize the class and set its properties.
+     *
+     * @since    1.0.0
+     *
+     * @param    string    $GFNoCaptchaReCaptcha    The name of this plugin.
+     * @param    string    $version                 The version of this plugin.
+     * @param    string    $options_name            Name for options (ie: Private/public keys)
+     */
+    public function __construct( $GFNoCaptchaReCaptcha, $version, $options_name ) {
 
-		$this->GFNoCaptchaReCaptcha = $GFNoCaptchaReCaptcha;
-		$this->version              = $version;
-		$this->options_name         = $options_name;
-		$this->options_values       = get_option( $this->options_name );
-	}
+        $this->GFNoCaptchaReCaptcha = $GFNoCaptchaReCaptcha;
+        $this->version              = $version;
+        $this->options_name         = $options_name;
+        $this->options_values       = get_option( $this->options_name );
+    }
 
-	/**
-	 * Registers plugin settings, settings section, and setting fields
-	 *
-	 * @since   1.0.0
-	 * @access  public
-	 */
-	public function settings_page_init() {
+    /**
+     * Registers plugin settings, settings section, and setting fields
+     *
+     * @since   1.0.0
+     * @access  public
+     */
+    public function settings_page_init() {
 
-		// Register setting "$this->options_name"
-		 register_setting(
-		    'gf_nocaptcha_recaptcha_group',  // Option group
-		    $this->options_name,             // Option name
-		    array( $this, 'sanitize_input' ) // Sanitize_input
-		);
+        // Register setting "$this->options_name"
+         register_setting(
+            'gf_nocaptcha_recaptcha_group',  // Option group
+            $this->options_name,             // Option name
+            array( $this, 'sanitize_input' ) // Sanitize_input
+        );
 
-		// Add section for settings
-		add_settings_section(
-		    'gf_nocaptcha_recaptcha_section',                                        // ID
-		    __( 'Google No CAPTCHA reCAPTCHA Settings', 'gf-no-captcha-recaptcha' ), // Title
-		    array( $this, 'section_callback' ),                                      // Callback
-		    'gf-nocaptcha-settings-admin'                                            // Page
-		);
+        // Add section for settings
+        add_settings_section(
+            'gf_nocaptcha_recaptcha_section',                                        // ID
+            __( 'Google No CAPTCHA reCAPTCHA Settings', 'gf-no-captcha-recaptcha' ), // Title
+            array( $this, 'section_callback' ),                                      // Callback
+            'gf-nocaptcha-settings-admin'                                            // Page
+        );
 
-		// Public key setting field
-		add_settings_field(
-		    'public_key',                                             // ID
-		    __( 'Site (Public) Key:', 'gf-no-captcha-recaptcha' ),    // Title
-		    array( $this, 'public_key_field_callback' ),              // Callback
-		    'gf-nocaptcha-settings-admin',                            // Page
-		    'gf_nocaptcha_recaptcha_section'                          // Section
-		);
+        // Public key setting field
+        add_settings_field(
+            'public_key',                                             // ID
+            __( 'Site (Public) Key:', 'gf-no-captcha-recaptcha' ),    // Title
+            array( $this, 'public_key_field_callback' ),              // Callback
+            'gf-nocaptcha-settings-admin',                            // Page
+            'gf_nocaptcha_recaptcha_section'                          // Section
+        );
 
-		// Private key setting field
-		add_settings_field(
-		    'private_key',                                            // ID
-		    __( 'Secret (Private) Key:', 'gf-no-captcha-recaptcha' ), // Title
-		    array( $this, 'private_key_field_callback' ),             // Callback
-		    'gf-nocaptcha-settings-admin',                            // Page
-		    'gf_nocaptcha_recaptcha_section'                          // Section
-		);
-	}
+        // Private key setting field
+        add_settings_field(
+            'private_key',                                            // ID
+            __( 'Secret (Private) Key:', 'gf-no-captcha-recaptcha' ), // Title
+            array( $this, 'private_key_field_callback' ),             // Callback
+            'gf-nocaptcha-settings-admin',                            // Page
+            'gf_nocaptcha_recaptcha_section'                          // Section
+        );
+    }
 
-	public function create_settings_menu_item() {
-
-		add_options_page(
     /**
      * Registers settings page in "Settings" sidebar menu
      *
@@ -135,41 +132,41 @@ class GFNoCaptchaReCaptcha_Admin {
             'gf-no-captcha-recaptcha-admin',
             array( $this, 'create_admin_page' )
         );
-	}
+    }
 
-	/**
-	 * Creates plugin settings page by loading in admin display partial
-	 *
-	 * @since   1.0.0
-	 * @access  public
-	 */
-	public function create_admin_page() {
+    /**
+     * Creates plugin settings page by loading in admin display partial
+     *
+     * @since   1.0.0
+     * @access  public
+     */
+    public function create_admin_page() {
 
         // Include dashboard partial
         include( 'partials/gf-no-captcha-recaptcha-admin-display.php' );
-   	}
+    }
 
-   	/**
-   	 * Sanitizes input by stripping tags from public/private key
-   	 *
-   	 * @param    array    $input    Un-sanitized input array
-   	 *
-	 * @since   1.0.0
-	 * @access  public
-   	 *
-   	 * @return   array    Sanitized array with public_key and private_key set
-   	 */
+    /**
+     * Sanitizes input by stripping tags from public/private key
+     *
+     * @param    array    $input    Un-sanitized input array
+     *
+     * @since   1.0.0
+     * @access  public
+     *
+     * @return   array    Sanitized array with public_key and private_key set
+     */
     public function sanitize_input( $input )
     {
         $sanitize_inputd_input = array();
 
         $sanitize_inputd_input['public_key'] = ( isset( $input['public_key'] ) ) ?
-        	strip_tags( $input['public_key'] ) :
-        	'';
+            strip_tags( $input['public_key'] ) :
+            '';
 
         $sanitize_inputd_input['private_key'] = ( isset( $input['private_key'] ) ) ?
-        	strip_tags( $input['private_key'] ) :
-        	'';
+            strip_tags( $input['private_key'] ) :
+            '';
 
         return $sanitize_inputd_input;
     }
@@ -177,8 +174,8 @@ class GFNoCaptchaReCaptcha_Admin {
     /**
      * Renders section content for plugin settings
      *
-	 * @since   1.0.0
-	 * @access  public
+     * @since   1.0.0
+     * @access  public
      */
     public function section_callback() {
 
@@ -188,57 +185,57 @@ class GFNoCaptchaReCaptcha_Admin {
     /**
      * Renders Public Key input field for plugin settings
      *
-	 * @since   1.0.0
-	 * @access  public
+     * @since   1.0.0
+     * @access  public
      */
     public function public_key_field_callback() {
 
-    	$val = isset( $this->options_values['public_key'] ) ?
-    		esc_attr( $this->options_values['public_key']) :
-    		'';
+        $val = isset( $this->options_values['public_key'] ) ?
+            esc_attr( $this->options_values['public_key']) :
+            '';
 
-    	echo '<input type="text" id="public_key" name="' . $this->options_name . '[public_key]" value="' . $val . '" />';
+        echo '<input type="text" id="public_key" name="' . $this->options_name . '[public_key]" value="' . $val . '" />';
     }
 
     /**
      * Renders Private Key input field for plugin settings
      *
-	 * @since   1.0.0
-	 * @access  public
+     * @since   1.0.0
+     * @access  public
      */
     public function private_key_field_callback() {
 
-    	$val = isset( $this->options_values['private_key'] ) ?
-    		esc_attr( $this->options_values['private_key']) :
-    		'';
+        $val = isset( $this->options_values['private_key'] ) ?
+            esc_attr( $this->options_values['private_key']) :
+            '';
 
-    	echo '<input type="text" id="private_key" name="' . $this->options_name . '[private_key]" value="' . $val . '" />';
+        echo '<input type="text" id="private_key" name="' . $this->options_name . '[private_key]" value="' . $val . '" />';
     }
 
     /**
      * Checks for public/private keys properly set, if not then displays an administration notification with link to settings page to set
      *
-	 * @since   1.0.0
-	 * @access  public
+     * @since   1.0.0
+     * @access  public
      */
     public function add_keys_notice() {
 
-    	if( is_admin() && current_user_can( 'manage_options' ) ) {
+        if( is_admin() && current_user_can( 'manage_options' ) ) {
 
-    		if( ( ! isset( $this->options_values['public_key'] ) || empty( $this->options_values['public_key'] ) ) || ( ! isset( $this->options_values['private_key'] ) || empty( $this->options_values['private_key'] ) ) ) {
+            if( ( ! isset( $this->options_values['public_key'] ) || empty( $this->options_values['public_key'] ) ) || ( ! isset( $this->options_values['private_key'] ) || empty( $this->options_values['private_key'] ) ) ) {
 
-    			echo '<div class="updated"><p>';
+                echo '<div class="updated"><p>';
 
-    			// Message
-    			echo __( 'You must enter a private/public key for Gravity Forms Google No CAPTCHA reCAPTCHA to work! ', 'gf-no-captcha-recaptcha' );
+                // Message
+                echo __( 'You must enter a private/public key for Gravity Forms Google No CAPTCHA reCAPTCHA to work! ', 'gf-no-captcha-recaptcha' );
 
-    			// Link to settings page
-    			echo '<a href="' . admin_url( 'options-general.php?page=gf-no-captcha-recaptcha-admin' ) . '">';
-    			echo __( 'Google No CAPTCHA reCAPTCHA Settings', 'gf-no-captcha-recaptcha' );
-    			echo '</a>';
+                // Link to settings page
+                echo '<a href="' . admin_url( 'options-general.php?page=gf-no-captcha-recaptcha-admin' ) . '">';
+                echo __( 'Google No CAPTCHA reCAPTCHA Settings', 'gf-no-captcha-recaptcha' );
+                echo '</a>';
 
-    			echo '</p></div>';
-    		}
-    	}
+                echo '</p></div>';
+            }
+        }
     }
 }

@@ -22,16 +22,16 @@
  */
 class GFNoCaptchaReCaptcha_Deactivator {
 
-	/**
-	 * Short Description. (use period)
-	 *
-	 * Long Description.
-	 *
-	 * @since    1.0.0
-	 */
-	public static function deactivate() {
+    /**
+     * Short Description. (use period)
+     *
+     * Long Description.
+     *
+     * @since    1.0.0
+     */
+    public static function deactivate() {
 
-		// Remove options from DB
-		delete_option( 'gf_nocaptcha_recaptcha_options' );
-	}
+        // Remove options from DB
+        delete_option( 'gf_nocaptcha_recaptcha_options' );
+    }
 }

@@ -11,16 +11,16 @@
 ?>
 <script type="text/javascript">
 
-	(function( $ ) {
+    (function( $ ) {
 
-		'use strict';
+        'use strict';
 
-	    $(function() {
+        $(function() {
 
-	        // Limit field settings to label and visiblity
-	        fieldSettings['<?php echo $this->gravity_forms_field_type; ?>'] = '.label_setting, .visibility_setting';
-	    });
+            // Limit field settings to label and visiblity
+            fieldSettings['<?php echo $this->gravity_forms_field_type; ?>'] = '.label_setting, .visibility_setting';
+        });
 
-	})( jQuery );
+    })( jQuery );
 
 </script>
