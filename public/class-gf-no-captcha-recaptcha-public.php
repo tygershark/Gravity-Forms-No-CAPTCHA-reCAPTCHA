@@ -248,7 +248,7 @@ class GFNoCaptchaReCaptcha_Public {
 			// Check to ensure POST challenge is included
 			if( isset( $_POST['g-recaptcha-response'] ) && ! empty( $_POST['g-recaptcha-response'] ) && ! empty( $this->google_private_key ) ) {
 
-				$recaptcha_response = $_POST['g-recaptcha-response'];
+				$recaptcha_response = urlencode( $_POST['g-recaptcha-response'] );
 				$user_ip            = $_SERVER['REMOTE_ADDR'];
 				$verify_url         = $this->sanitize_url( 'https://www.google.com/recaptcha/api/siteverify?secret=' . $this->google_private_key . '&response=' . $recaptcha_response . '&remoteip=' . $user_ip );
 				$json_response      = file_get_contents( $verify_url );
