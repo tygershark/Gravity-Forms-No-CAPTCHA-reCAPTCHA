@@ -279,10 +279,10 @@ class GFNoCaptchaReCaptcha_Public {
 	 *
 	 * @param     string    $url    URL to be sanitized
 	 *
-	 * @return    string    Sanitized URL via "filter_var" FILTER_VALIDATE_URL
+	 * @return    string    Sanitized URL via "filter_var" FILTER_SANITIZE_URL
 	 */
 	private function sanitize_url( $url ) {
 
-		return filter_var( $url, FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED );
+		return filter_var( $url, FILTER_SANITIZE_URL, FILTER_FLAG_SCHEME_REQUIRED );
 	}
 }
