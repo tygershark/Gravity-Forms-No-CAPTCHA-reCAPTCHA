@@ -51,3 +51,8 @@ TODO: Screenshots
 
 = 1.0 =
 * Preliminary version developed based on Tom McFarlin's [WP Plugin Boilerplate](https://tommcfarlin.com/wordpress-plugin-boilerplate/) - [GitHub Project](https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate)
+
+= 1.0.1 =
+* Fixed tabs->spaces formatting issue
+* Added better URL validation/sanitization/filtering
+* Fixed missing documentation issue
