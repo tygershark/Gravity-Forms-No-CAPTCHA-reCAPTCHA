@@ -174,8 +174,16 @@ class GFNoCaptchaReCaptcha_Public {
             // Ensure not admin, and public/private keys exist before adding in form DIV
             if( ! is_admin() && ! empty( $this->google_public_key ) && ! empty( $this->google_private_key ) ) {
 
+                // Public site key
+                $site_key = esc_html( $this->google_public_key );
+
+                // CAPTCHA Theme
+                $theme = ( isset( $field['recaptcha_theme'] ) && ! empty( $field['recaptcha_theme'] ) ) ?
+                    esc_html( $field['recaptcha_theme'] ) :
+                    'light';
+
                 // Public sees CAPTCHA field
-                return '<div class="ginput_container"><div id="g_no_captcha_recaptcha" class="g-recaptcha" data-sitekey="' . $this->google_public_key . '"></div></div>';
+                return '<div class="ginput_container"><div class="g-recaptcha" data-sitekey="' . $site_key . '" data-theme="' . $theme . '"></div></div>';
 
             } else {
 
