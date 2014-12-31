@@ -49,10 +49,14 @@ TODO: Screenshots
 
 == Changelog ==
 
-= 1.0 =
-* Preliminary version developed based on Tom McFarlin's [WP Plugin Boilerplate](https://tommcfarlin.com/wordpress-plugin-boilerplate/) - [GitHub Project](https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate)
+= 1.0.2 =
+* Added theme support (light/dark)
+* Fixed "Cannot use reCAPTCHA more than once on a page" bug (resolves issue #1)
 
 = 1.0.1 =
 * Fixed tabs->spaces formatting issue
 * Added better URL validation/sanitization/filtering
 * Fixed missing documentation issue
+
+= 1.0 =
+* Preliminary version developed based on Tom McFarlin's [WP Plugin Boilerplate](https://tommcfarlin.com/wordpress-plugin-boilerplate/) - [GitHub Project](https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate)
