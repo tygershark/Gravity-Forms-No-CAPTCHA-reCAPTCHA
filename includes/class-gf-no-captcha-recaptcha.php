@@ -179,12 +179,13 @@ class GFNoCaptchaReCaptcha {
         $plugin_public = new GFNoCaptchaReCaptcha_Public( $this->get_GFNoCaptchaReCaptcha(), $this->get_version(), $this->get_options_name() );
 
         // Hook into correct filters/actions for Gravity Forms application logic:
-        $this->loader->add_filter( 'gform_add_field_buttons', $plugin_public, 'gravity_forms_field' );
-        $this->loader->add_filter( 'gform_field_type_title' , $plugin_public, 'gravity_forms_field_title' );
-        $this->loader->add_action( 'gform_field_input',       $plugin_public, 'gravity_forms_field_input', 10, 5 );
-        $this->loader->add_action( 'gform_editor_js',         $plugin_public, 'gravity_forms_field_editor_js' );
-        $this->loader->add_action( 'gform_enqueue_scripts' ,  $plugin_public, 'gravity_forms_recaptcha_api_enqueue_script' , 10 , 2 );
-        $this->loader->add_filter( 'gform_field_validation',  $plugin_public, 'gravity_forms_validate', 10, 4 );
+        $this->loader->add_filter( 'gform_add_field_buttons',       $plugin_public, 'gravity_forms_field' );
+        $this->loader->add_filter( 'gform_field_type_title' ,       $plugin_public, 'gravity_forms_field_title' );
+        $this->loader->add_action( 'gform_field_input',             $plugin_public, 'gravity_forms_field_input', 10, 5 );
+        $this->loader->add_action( 'gform_editor_js',               $plugin_public, 'gravity_forms_field_editor_js' );
+        $this->loader->add_action( 'gform_field_advanced_settings', $plugin_public, 'gravity_forms_add_theme_setting', 10, 2 );
+        $this->loader->add_action( 'gform_enqueue_scripts' ,        $plugin_public, 'gravity_forms_recaptcha_api_enqueue_script' , 10 , 2 );
+        $this->loader->add_filter( 'gform_field_validation',        $plugin_public, 'gravity_forms_validate', 10, 4 );
     }
 
     /**

@@ -201,6 +201,24 @@ class GFNoCaptchaReCaptcha_Public {
     }
 
     /**
+     *
+     * Action to add "theme" dropdown to Gravity Forms editor page for CAPTCHA theme setting
+     *
+     * @since    1.0.2
+     * @access   public
+     *
+     */
+    public function gravity_forms_add_theme_setting( $position, $form_id ) {
+
+        // Create setting on position 0 (first item on "Advanced" tab)
+        if( $position == 0 ) {
+
+            // Include the dropdown partial
+            include 'partials/gf-no-captcha-recaptcha-public-theme-dropdown.php';
+        }
+    }
+
+    /**
      * Action to enque Google reCAPTCHA external API JS if there is a "No CAPTCHA" field in current form
      *
      * @since    1.0.0
