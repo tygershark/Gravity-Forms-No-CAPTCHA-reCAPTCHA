@@ -28,11 +28,11 @@ Normally this situation comes up if you have more than one Gravity Form with CAP
 
 ## Screenshots
 
-![Plugin in action on contact form](/assets/screenshot-1.png?raw=true "Plugin in action on contact form")
+![Plugin in action on contact form](https://raw.githubusercontent.com/folkhack/Gravity-Forms-No-CAPTCHA-reCAPTCHA/master/gravity-forms-no-captcha-recaptcha/assets/screenshot-1.png "Plugin in action on contact form")
 
-![Plugin administrative settings page with Site and Secret key settings](/assets/screenshot-2.png?raw=true "Plugin administrative settings page with Site and Secret key settings")
+![Plugin administrative settings page with Site and Secret key settings](https://raw.githubusercontent.com/folkhack/Gravity-Forms-No-CAPTCHA-reCAPTCHA/master/gravity-forms-no-captcha-recaptcha/assets/screenshot-2.png "Plugin administrative settings page with Site and Secret key settings")
 
-![Adding the No CAPTCHA field to the Gravity Forms form builder](/assets/screenshot-3.png?raw=true "Adding the No CAPTCHA field to the Gravity Forms form builder")
+![Adding the No CAPTCHA field to the Gravity Forms form builder](https://raw.githubusercontent.com/folkhack/Gravity-Forms-No-CAPTCHA-reCAPTCHA/master/gravity-forms-no-captcha-recaptcha/assets/screenshot-3.png "Adding the No CAPTCHA field to the Gravity Forms form builder")
 
 ## Roadmap + To-do Items
 
