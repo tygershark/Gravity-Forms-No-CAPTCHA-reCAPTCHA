@@ -1,16 +1,16 @@
-=== Plugin Name ===
+=== Gravity Forms No CAPTCHA reCAPTCHA ===
 Contributors: folkhack
-Tags: CAPTCHA, Gravity Forms
+Tags: CAPTCHA, Gravity Forms, No CAPTCHA, reCAPTCHA
 Requires at least: 4.0.0
 Tested up to: 4.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Adds a No CAPTCHA reCAPTCHA to field type Gravity Forms
+Adds a No CAPTCHA reCAPTCHA to field Gravity Forms
 
 == Description ==
 
-Adds a No CAPTCHA reCAPTCHA to field type Gravity Forms. In development/testing phase.
+Adds a No CAPTCHA reCAPTCHA to field type Gravity Forms form builder with light/dark theme options. Forms with No CAPTCHA reCAPTCHA will then validate the field before successful submission.
 
 == Installation ==
 
@@ -27,27 +27,29 @@ Adds a No CAPTCHA reCAPTCHA to field type Gravity Forms. In development/testing 
 
 Yes.
 
-= What versions of Gravity Forms/WordPress have you tested this with? =
+= What versions of Gravity Forms/WordPress have you formally tested this with? =
 
 * Gravity Forms: 1.8.19
-* WordPress: 4.0.0, 4.0.1
+* WordPress: 4.0.0, 4.0.1, 4.1.0
+
+= Can I have multiple No CAPTCHA reCAPTCHA fields on one page? =
+
+Normally this situation comes up if you have more than one Gravity Form with CAPTCHA on one page. As of version 1.0.2 this is supported.
 
 == Screenshots ==
 
-TODO: Screenshots
-
-== Roadmap + To-do Items ==
-
-* Push out to WordPress plugin communities for testing/code review
-* Better documentation, Screenshots/etc.
-* Addition of composer.json (maybe)
-* Light/dark reCAPTCHA theme support (now only light supported)
-* Hooks/filters for customizing things like error message, etc.
-* Localization/internationalization support (ideally get someone's help who knows what they're doing)
-* Perhaps Submit to WordPress Plugin Repository
-* Add proper uninstaller (uninstall.php)
+1. Plugin in action on contact form
+2. Plugin administrative settings page with "Site" and "Secret" key settings
+3. Adding the No CAPTCHA field to the Gravity Forms form builder
 
 == Changelog ==
+
+= 1.0.3 =
+* Updated README.txt documentation
+* Added README.txt documentation to README.md and CHANGELOG.md
+* Added icon, banner, and screenshots
+* Re-organized assets into "trunk" and "assets" directories
+* Prepping to submit to WordPress Plugin Directory
 
 = 1.0.2 =
 * Added theme support (light/dark)
