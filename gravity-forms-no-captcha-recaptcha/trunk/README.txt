@@ -9,6 +9,8 @@ Stable tag: trunk
 
 Adds a No CAPTCHA reCAPTCHA to field Gravity Forms
 
+[Official GitHub Repository](https://github.com/folkhack/Gravity-Forms-No-CAPTCHA-reCAPTCHA)
+
 == Description ==
 
 Adds a No CAPTCHA reCAPTCHA to field type Gravity Forms form builder with light/dark theme options. Forms with No CAPTCHA reCAPTCHA will then validate the field before successful submission.

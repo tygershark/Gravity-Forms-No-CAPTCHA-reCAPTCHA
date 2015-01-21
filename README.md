@@ -2,6 +2,8 @@
 
 Adds a No CAPTCHA reCAPTCHA to field type Gravity Forms form builder with light/dark theme options. Forms with No CAPTCHA reCAPTCHA will then validate the field before successful submission.
 
+[Official WordPress Plugin Directory Page](https://wordpress.org/plugins/gravity-forms-no-captcha-recaptcha/)
+
 ## Installation
 
 1. Upload "gravity-forms-no-captcha-recaptcha" to "plugins" directory
