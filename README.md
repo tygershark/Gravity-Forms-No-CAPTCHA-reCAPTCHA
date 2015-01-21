@@ -41,7 +41,6 @@ Normally this situation comes up if you have more than one Gravity Form with CAP
 * Addition of composer.json (maybe)
 * Hooks/filters for customizing things like error message, etc.
 * Localization/internationalization support (ideally get someone's help who knows what they're doing)
-* Perhaps Submit to WordPress Plugin Repository
 * Add proper uninstaller (uninstall.php)
 
 ## Special Thanks
