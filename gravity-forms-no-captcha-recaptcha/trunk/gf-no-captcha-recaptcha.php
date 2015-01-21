@@ -3,15 +3,15 @@
 /**
  * Gravity Forms No CAPTCHA reCAPTCHA plugin bootstrap file
  *
- * @link              http://folkhack.com
+ * @link              https://github.com/folkhack/Gravity-Forms-No-CAPTCHA-reCAPTCHA
  * @since             1.0.0
  * @package           GFNoCaptchaReCaptcha
  *
  * @wordpress-plugin
  * Plugin Name:       Gravity Forms No CAPTCHA reCAPTCHA
- * Plugin URI:        http://folkhack.com
+ * Plugin URI:        https://github.com/folkhack/Gravity-Forms-No-CAPTCHA-reCAPTCHA
  * Description:       Adds "No CAPTCHA" field to Gravity Forms as alternative CAPTCHA option
- * Version:           1.0.2
+ * Version:           1.0.5
  * Author:            John Parks - Folkhack Studios
  * Author URI:        http://folkhack.com
  * License:           GPL-2.0+
