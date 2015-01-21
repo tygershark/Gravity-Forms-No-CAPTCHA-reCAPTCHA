@@ -13,7 +13,10 @@ Adds "No CAPTCHA reCAPTCHA" field to Gravity Forms as an alternative CAPTCHA opt
 
 Adds a "No CAPTCHA reCAPTCHA" field type to Gravity Forms form builder with light/dark theme options. Forms with a "No CAPTCHA reCAPTCHA" will validate the field before successful submission.
 
-[Official GitHub Repository](https://github.com/folkhack/Gravity-Forms-No-CAPTCHA-reCAPTCHA)
+= Further Reading =
+
+* [Official GitHub Repository](https://github.com/folkhack/Gravity-Forms-No-CAPTCHA-reCAPTCHA)
+* [Folkhack Studios](http://folkhack.com)
 
 == Installation ==
 
@@ -28,7 +31,7 @@ Adds a "No CAPTCHA reCAPTCHA" field type to Gravity Forms form builder with ligh
 
 = Does this work for AJAX submitted forms? =
 
-Yes.
+Yes, we took special consideration to ensure that validation works correctly when submitting a form via AJAX!
 
 = What versions of Gravity Forms/WordPress have you formally tested this with? =
 
