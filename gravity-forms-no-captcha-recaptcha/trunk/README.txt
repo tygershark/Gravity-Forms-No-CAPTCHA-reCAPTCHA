@@ -47,6 +47,12 @@ Normally this situation comes up if you have more than one Gravity Form with CAP
 
 == Changelog ==
 
+# 1.0.6
+* Resolved confusing grammar issue in README.md, README.txt, and gf-no-captcha-recaptcha.php descriptions
+* Updated to 1.0.6 version in gf-no-captcha-recaptcha.php
+* Added 1.0.6 tag updates to CHANGELOG.md
+* Updated plugin Changelog in README.txt to reflect CHANGELOG.md
+
 # 1.0.5
 * Updated banner image to not suck in regards to WordPress Plugin Directory
 * Moved GitHub Repo link to appropriate spot within description
