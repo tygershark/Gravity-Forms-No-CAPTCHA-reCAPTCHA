@@ -215,6 +215,9 @@ class GFNoCaptchaReCaptcha_Public {
      * @since    1.0.2
      * @access   public
      *
+     * @param   int     $position   Specifies the position that the settings will be displayed.
+     * @param   int     $form_id    The current Form ID
+     *
      */
     public function gravity_forms_add_theme_setting( $position, $form_id ) {
 
@@ -236,23 +239,28 @@ class GFNoCaptchaReCaptcha_Public {
      * @param    boolean    $ajax    Specifies if form is configured to be submitted via AJAX
      *
      */
-    public function gravity_forms_recaptcha_api_enqueue_script( $form, $ajax ) {
+	public function gravity_forms_recaptcha_api_enqueue_script( $form, $ajax ) {
 
-        // cycle through fields to see if tos is being used
-        foreach( $form['fields'] as $field ) {
+		if(is_array($form)) {
+			// cycle through fields to see if tos is being used
+			foreach ( $form['fields'] as $field ) {
 
-            if( ( $field['type'] == $this->gravity_forms_field_type ) && ! empty( $this->google_public_key ) ) {
+				if ( ( $field['type'] == $this->gravity_forms_field_type ) && ! empty( $this->google_public_key ) ) {
 
-                // Enqueue External API JS
-                wp_enqueue_script( 'no_captcha_recaptcha_api', 'https://www.google.com/recaptcha/api.js?render=explicit', array(), '', true );
+					// Enqueue External API JS
+					wp_enqueue_script( 'no_captcha_recaptcha_api', 'https://www.google.com/recaptcha/api.js?render=explicit', array(), '', true );
 
-                // Enqueue Internal JS (renders CAPTCHA explicitly - maintains AJAX submission compatibility)
-                wp_enqueue_script( 'no_captcha_recaptcha_internal', plugin_dir_url( __FILE__ ) . 'js/gf-no-captcha-recaptcha-public.js', array( 'jquery', 'no_captcha_recaptcha_api' ) );
+					// Enqueue Internal JS (renders CAPTCHA explicitly - maintains AJAX submission compatibility)
+					wp_enqueue_script( 'no_captcha_recaptcha_internal', plugin_dir_url( __FILE__ ) . 'js/gf-no-captcha-recaptcha-public.js', array(
+						'jquery',
+						'no_captcha_recaptcha_api'
+					) );
 
-                break;
-            }
-        }
-    }
+					break;
+				}
+			}
+		}
+	}
 
     /**
      * Filter to add custom validation logic for "No CAPTCHA" input
