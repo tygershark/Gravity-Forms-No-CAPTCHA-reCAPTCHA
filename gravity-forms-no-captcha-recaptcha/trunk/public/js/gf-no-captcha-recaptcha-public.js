@@ -19,11 +19,14 @@
                     // CAPTCHA theme
                     var theme = $( this ).attr( 'data-theme' );
 
+                    // CAPTCHA size
+                    var size = $( this ).attr( 'data-size' );
+
                     // Native DOM element
                     var element  = $( this ).get( 0 );
 
                     // Render CAPTCHA
-                    grecaptcha.render( element, { 'sitekey': site_key, 'theme': theme } );
+                    grecaptcha.render( element, { 'sitekey': site_key, 'theme': theme, 'size': size } );
                 }
             });
         });
