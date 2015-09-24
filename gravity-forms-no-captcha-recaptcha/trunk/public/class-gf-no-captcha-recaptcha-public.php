@@ -182,8 +182,13 @@ class GFNoCaptchaReCaptcha_Public {
                     esc_html( $field['recaptcha_theme'] ) :
                     'light';
 
+                //CAPTCHA size
+                $theme_size = ( isset( $field['recaptcha_size'] ) && ! empty( $field['recaptcha_size'] ) ) ?
+                    esc_html( $field['recaptcha_size'] ) :
+                    'normal';
+
                 // Public sees CAPTCHA field
-                return '<div class="ginput_container"><div class="g-recaptcha" data-sitekey="' . $site_key . '" data-theme="' . $theme . '"></div></div>';
+                return '<div class="ginput_container"><div class="g-recaptcha" data-sitekey="' . $site_key . '" data-theme="' . $theme . '" data-size="' . $theme_size . '"></div></div>';
 
             } else {
 
