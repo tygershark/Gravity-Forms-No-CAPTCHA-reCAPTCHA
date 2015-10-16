@@ -172,7 +172,7 @@ class GFNoCaptchaReCaptcha_Public {
         if ( $field['type'] == $this->gravity_forms_field_type ) {
 
             // Ensure not admin, and public/private keys exist before adding in form DIV
-            if( ! is_admin() && ! empty( $this->google_public_key ) && ! empty( $this->google_private_key ) ) {
+             if( ! (is_admin() && !defined( 'DOING_AJAX' )) && ! empty( $this->google_public_key ) && ! empty( $this->google_private_key ) ) {
 
                 // Public site key
                 $site_key = esc_html( $this->google_public_key );
