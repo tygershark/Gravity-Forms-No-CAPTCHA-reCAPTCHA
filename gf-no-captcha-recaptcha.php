@@ -11,8 +11,8 @@
  * Plugin Name:       Gravity Forms No CAPTCHA reCAPTCHA
  * Plugin URI:        https://github.com/folkhack/Gravity-Forms-No-CAPTCHA-reCAPTCHA
  * Description:       Adds "No CAPTCHA reCAPTCHA" field to Gravity Forms as an alternative CAPTCHA option
- * Version:           1.0.7
- * Author:            John Parks - Folkhack Studios
+ * Version:           1.0.8
+ * Author:            John Parks - Folkhack Studios/Tristan Gemus
  * Author URI:        http://folkhack.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt

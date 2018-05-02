@@ -256,10 +256,11 @@ class GFNoCaptchaReCaptcha_Public {
 					wp_enqueue_script( 'no_captcha_recaptcha_api', 'https://www.google.com/recaptcha/api.js?render=explicit', array(), '', true );
 
 					// Enqueue Internal JS (renders CAPTCHA explicitly - maintains AJAX submission compatibility)
-					wp_enqueue_script( 'no_captcha_recaptcha_internal', plugin_dir_url( __FILE__ ) . 'js/gf-no-captcha-recaptcha-public.js', array(
-						'jquery',
-						'no_captcha_recaptcha_api'
-					) );
+					wp_enqueue_script(
+                        'no_captcha_recaptcha_internal', plugin_dir_url( __FILE__ ) . 'js/gf-no-captcha-recaptcha-public.js',
+                        array( 'jquery', 'no_captcha_recaptcha_api' ),
+                        $this->version
+                    );
 
 					break;
 				}

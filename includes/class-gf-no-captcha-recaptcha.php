@@ -78,7 +78,7 @@ class GFNoCaptchaReCaptcha {
     public function __construct() {
 
         $this->GFNoCaptchaReCaptcha = 'gf-no-captcha-recaptcha';
-        $this->version              = '1.0.0';
+        $this->version              = '1.0.8';
         $this->options_name         = 'gf_nocaptcha_recaptcha_options';
 
         $this->load_dependencies();

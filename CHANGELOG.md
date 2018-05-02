@@ -1,3 +1,7 @@
+# 1.0.8
+* Fixed iOS scrolling issue
+* Removed Wordpress plugin folder structure support
+
 # 1.0.7
 * Fixed yet another documentation issue with FAQ AJAX section
 * Updated to 1.0.7 version in gf-no-captcha-recaptcha.php
